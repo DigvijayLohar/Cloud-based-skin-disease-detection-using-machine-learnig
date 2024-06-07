@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>About Us - Skin Disease Detection</title>
+    <link rel="shortcut icon" href="../static/image1.png" type="image/x-icon">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", Sans-serif;
+            background-color: #faf8f4;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 0px 10px 0px 10px;
+        }
+
+        .logo img {
+            width: 120px;
+            height: 70px;
+        }
+
+        .nav-list {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            list-style: none;
+            color: #101010;
+        }
+
+        .nav-list li {
+            margin: auto 20px;
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-btns {
+            display: flex;
+            text-decoration: none;
+        }
+        
+        .nav-list li.active a {
+            text-decoration: underline; /* Adding underline to the active link */
+        }
+
+        .main {
+            height: 70vh;
+            width: 100vw;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .header-content {
+            display: flex;
+            background: linear-gradient(to right, #bdb1c5, #ddd7d0);
+            height: 80vh;
+            width: 90vw;
+            border-radius: 50px;
+            margin: auto;
+        }
+
+        .right {
+            width: 50%;
+            height: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right p {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            
+        }
+
+        .right p.about-title {
+            
+            margin-bottom: 40px;
+        
+        }
+
+        .right p.about-description {
+            margin: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .left {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        .about-title {
+    margin-left: 20px;
+}
+
+.about-description {
+    margin-left: 20px;
+}
+
+    </style>
+</head>
+
+<body>
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='image1.png') }}" alt="My Image">
+    </div>
+    <ul class="nav-list">
+        <div class="nav-links">
+            <li><a href="{{url_for('html')}}" style="text-decoration:none">Home</a></li>
+            <li><a href="#" style="text-decoration:none">About</a></li>
+            <li><a href="#" style="text-decoration:none">Services</a></li>
+            <li><a href="{{url_for('contact')}}" style="text-decoration:none">Contact</a></li>
+        </div>
+
+    </ul>
+</nav>
+<div class="main">
+    <div class="header-content">
+        <div class="right">
+            <div>
+                <p class="about-title">About Us</p>
+                <p class="about-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu velit in magna vehicula
+                    posuere.
+                    Nulla facilisi. Vivamus bibendum malesuada magna, nec suscipit nisl ultrices vel. Nam faucibus, ex
+                    non volutpat vehicula, erat libero mattis elit, nec laoreet nisi felis non nisi. Proin in
+                    ullamcorper
+                    
+                </p>
+            </div>
+        </div>
+        <div class="left">
+            <div class="logo2">
+                <img src="/static/image1.png" alt="My Image">
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

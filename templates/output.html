@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Information</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="receivedData">{{ classpred }}</h1>
+        <p>This is a simple HTML page demonstrating the use of a title and information about the title.</p>
+        <a href="{{url_for('index2')}}" class="back-button">Back</a>
+    </div>
+    <script>
+         
+            const Information = 
+            [
+               {
+                   Title:"Actinic keratoses",
+                   info: "Actinic keratosis (AK) is a skin disorder that causes rough, scaly patches of skin. AK can become tender and inflamed before progressing to SCCs. Other symptoms of AK include:A flat to slightly raised patch or bump on the top layer of skinA hard, wartlike surfaceA rough, dry, or scaly patch of skin, usually less than 1 inch (2.5 centimeters) indiameter Treatments for AK include:Freezing (cryotherapy)Topical medications, such as chemotherapy creams or immunomodulatorsLight-based therapies, such as photodynamic therapy (PDT)Laser resurfacing About 10% of AKs will develop into an SCC, and the progression will take approximately 2years. This is for informational purposes only. This information does not constitute medicaladvice or diagnosis ."
+               },
+               {
+                   Title:"Basal cell carcinoma",
+                   info:"Basal cell carcinoma (BCC) is the most common type of skin cancer. It's a type of nonmelanocytic skin cancer that starts in the basal cell layer, which is the lower part of the epidermis. BCC usually develops on sun-exposed areas, such as the face, head, neck, and arms. BCC typically presents as a shiny, pink- or flesh-colored papule or nodule with surfacetelangiectasia. The tumor may enlarge and ulcerate, giving the borders a rolled or rodentulcer appearance. On brown and Black skin, BCC often looks like a bump that's brown orglossy black and has a rolled border. BCC tends to grow slowly and it's very rare for a basal cell cancer to spread to otherparts of the body. There are four main clinical variants of BCC: Nodular, Superficial spreading, Sclerosing,Pigmented. People who have ever tanned indoors have a 29 percent increased risk of developing BCC.Any history of indoor tanning increases your risk of developing BCC before age 40 by 69percent. This is for informational purposes only. This information does not constitute medicaladvice or diagnosis"
+               },
+               {
+                   Title:"Benign keratosis-like lesions",
+                   info:"A benign keratosis-like lesion is a common noncancerous (benign) skin growth. Seborrheic keratoses are a type of benign keratosis-like lesion that look like warts:Appearance: They are usually brown, black, or light tan, and look waxy or scaly. They maybe somewhat greasy plaques that vary in size and thickness, and often appear to be stuckonto the skin surface.Age: They tend to appear in middle age and you may get more as you get older.harmless: Most benign lesions don't need treatment unless they're bothering you or youdon't like how they look. Viral lesions that can mimic seborrheic keratoses include verruca plana and verrucavulgaris. This is for informational purposes only. This information does not constitute medicaladvice or diagnosis."
+               },
+               {
+                   Title:"Dermatofibroma",
+                   info:"A dermatofibroma is a benign, firm-to-hard, single nodule that usually appears on the lower legs. It's usually centered in the skin's dermis and is 0.5-1.0 cm in diameter. The skin's surface may be smooth, but it may also be scaly. The overlying skin may dimple when pinched. Dermatofibromas are harmless and will not turn into cancer. They can occur in people ofall ages, but are more common in people between the ages of 20 and 40, and in women morethan men. Dermatofibromas usually persist for life, but they may become flatter and softer afterseveral years. A doctor can remove a dermatofibroma by surgically excising it and stitching up the area.The procedure may leave a small scar, but the scarring is usually minimal. When many dermatofibromas are present, it may indicate an underlying condition, such aslupus or a weakened immune system. This is for informational purposes only. This information does not constitute medicaladvice or diagnosis."
+               },
+               {
+                   Title:"Melanoma",
+                   info :"Melanoma is a serious type of skin cancer that starts in melanocytes, the cells that produce melanin, the pigment that gives skin its color. Melanoma can appear as a new spot or as a change in an existing mole or freckle. It grows quickly and can spread to any organ. The Cancer Association of South AfricaRisk factors for melanoma include:Exposure to UVradiation from the sun or other sources such as solariumsSunburn, especially duringchildhoodA history of childhood tanning and sunburn There are four main types of melanoma skin cancer: Superficial spreading, Nodular, Lentigomaligna, Acral lentiginous. Over 95%of skin cancers can be successfully treated if they are found early. This is forinformational purposes only. This information does not constitute medicaladvice ordiagnosis."
+               },
+               {
+                   Title:"Melanocytic nevi",
+                   info:"Melanocytic nevi, also known as moles, are non-cancerous skin cells that contain pigment-producing cells. They can appear anywhere on the body and are fairly common. In most cases, they do not cause health problems and typically do not require treatment. A small percentage of melanocytic nevi may develop into a melanoma. Melanocytic nevi canbe surgically removed for cosmetic considerations or because of concern regarding thebiological potential of a lesion. Melanocytic nevi can be removed by tangential or shave excision. Punch excision can beused for relatively small lesions. Small and medium size nevi (up to 5 cm in diameter) canbe removed in a one-stage procedure with suturing of the wound, local plasty orfree-tissue skin graft. Congenital melanocytic nevi (CMN) are skin lesions characterized by benign proliferationsof nevomelanocytes. They are thought to be caused by a genetic mutation, called a sporadicmutation, which develops randomly as a baby grows in the womb. Most cases of CMN neverrequire treatment, but there are some cases in which the moles may be removed. This is for informational purposes only. This information does not constitute medicaladvice or diagnosis."
+               },
+               {
+                   Title:"Vascular lesions",
+                   info:"Vascular lesions are abnormal growths or malformations in blood vessels. They can occur in various parts of the body and can be congenital or acquired. They can result from injury, infection, or other underlying medical conditions. The three major categories of vascular lesions are: Hemangiomas, Vascular malformations,Pyogenic granulomas. Vascular lesions within the head and neck have a broad pathological spectrum. Theseinclude a variety of tumors and malformations. Typically, doctors will order imaging studies to help with diagnosis. Imaging studies mayinclude ultrasound, MRI, and/or angiography, an imaging procedure that involves theinjection of dye that will outline the blood vessels on an X-ray. Vesicle treatment depends on the cause but may include: Antibiotics, Antifungals, Antivirals, Topical steroids, NSAIDs, Antihistamines, Biologics. This is for informational purposes only. This information does not constitute medicaladvice or diagnosis."
+               },
+            ]
+            
+         let reve=document.getElementById('receivedData').textContent 
+            Information.forEach(e=> {
+                if(e.Title == reve)
+                {
+                    document.querySelector('p').textContent = e.info
+                }
+            })
+            
+            
+    </script>
+</body>
+</html>

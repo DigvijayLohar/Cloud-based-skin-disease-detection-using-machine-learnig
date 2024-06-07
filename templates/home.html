@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+	<title>Skin Disease Detection</title>
+    <link rel="shortcut icon" href="../static/image1.png" type="image/x-icon">
+    
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins');
+        *{margin:0;
+             padding:0;
+             box-sizing:border-box;
+        }
+        body{
+           font-family:'Poppins',Sans-serif;
+           background-color:#FAF8F4;
+
+        }
+        header{
+            width:80%;
+            margin:auto;
+        }
+        nav{
+           display:flex;
+            align-items:center;
+            padding:10px;
+        }
+        .logo img{
+        width:120px;
+        height:70px;
+        }
+       .nav-list{
+        display:flex;
+        width:100%;
+        justify-content:space-between;
+        list-style:none;
+        color:#101010;
+       }
+       .nav-list li{
+        margin:auto 20px;
+        width:100%;
+        
+        
+       }
+       .nav-links{
+        display:flex;
+       }
+       .nav-btns{
+        display:flex;
+        text-decoration:none;
+       }
+       
+       .header-content{
+        display:flex;
+        background:linear-gradient(to right, #BDB1C5, #DDD7D0);
+        max-height:77vh;
+        max-width:90vw;
+        border-radius:50px;
+        align-items:center;
+        margin:auto;
+        justify-content:center;
+       }
+       .intro-text{
+        flex-basis:50%;
+        padding:5px 50px 0px 50px;
+        margin-left: 10px;
+        
+       }
+       .intro-text h1{
+      font-size:50px;
+       }
+       .intro-text span{
+        color: #832f0a;
+       }
+
+       .intro-text p{
+      color:#7B787C;
+       }
+       
+       .hero-img img{
+       width:48vw;
+       height:78vh;
+       }
+       .btns{
+        margin-top:30px;
+        display:flex;
+       }
+       .btn-primary{
+        padding:12px 20px;
+        background:linear-gradient(to right, #525252, #101010);
+        border:none;
+        border-radius:10px ;
+        color:white;
+        margin-right:20px;
+       }
+       .cloud-info {
+      
+      
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .cloud-info h2 {
+      color: #333;
+    }
+       .btn-secondary{
+        
+        padding:12px 20px;
+        border-radius:10px;
+        color:#101010;
+        list-style:none;
+        border:1px solid black;
+        background:transparent;        
+       }
+       
+       .btn-secondary:hover {
+    background-color: bisque;
+    font-weight: bold;
+}
+.btn-primary:hover {
+    background-color:white;
+    font-weight: bold;
+}
+    </style>
+</head>
+
+<body>
+
+   <div class="header">
+    <nav>
+        <div class="logo">
+            <!-- <img src="C:\Users\LENOVO\Desktop\flask-app\statics\image1.png" alt="image"> -->
+            <img src="{{ url_for('static', filename='image1.png') }}" alt="My Image">
+
+    </div>
+    <ul class="nav-list">
+        <div class="nav-links">
+        <li><a href="{{url_for('home')}}" style="text-decoration:none">Home</a><li>
+        <li><a href="{{url_for('About')}}" style="text-decoration:none">About</a><li>
+        <li><a href="#" style="text-decoration:none">Services</a><li>
+        <li><a href="{{url_for('contact')}}" style="text-decoration:none">Contact</a><li>
+        </div>
+        <div class="nav-btns">
+            <li href="#" class="btn-primary" style="text-decoration:none" >Welcome ,</li>
+        </div>
+    </ul>
+    </nav>
+    <div class="header-content">
+       <div class="intro-text">
+ <h1> <span class="S1">Skin</span> <br> Disease Detection</h1>
+<p>Welcome to our website dedicated to cloud-based skin disease detection. We leverage the power of cloud computing to enhance the accuracy and efficiency of skin condition identification.</p>
+
+
+<div class="btns">
+    <li><a href="{{url_for('index2')}}"  style="text-decoration:none" class="btn-primary">Upload Image</a></li>
+ </div>
+</div>
+    <div class="hero-img">
+        <!-- <img src="C:\Users\LENOVO\Desktop\flask-app\" alt="image"> -->
+        <!-- <img src="{{ url_for('static', filename='statics\image2.png') }}" alt="My Image"> -->
+        <img src="{{ url_for('static', filename='image2.png') }}" alt="My Image">
+
+    </div>
+    </div>
+   </div>
+
+   
+</body>
+</html>
+

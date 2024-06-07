@@ -1,0 +1,11 @@
+gunicorn==21.2.0
+Flask==3.0.0
+numpy
+Pillow
+pymongo 
+Werkzeug==3.0.1
+tensorflow == 2.15.0 
+wheel == 0.38.4  
+gevent == 23.9.1              
+watchdog == 4.0.0  
+keras == 2.15.0

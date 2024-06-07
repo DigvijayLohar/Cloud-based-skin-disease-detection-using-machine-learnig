@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact Us - Skin Disease Detection</title>
+    <link rel="shortcut icon" href="../static/image1.png" type="image/x-icon">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", Sans-serif;
+            background-color: #faf8f4;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 0px 10px 0px 10px;
+        }
+
+        .logo img {
+            width: 120px;
+            height: 70px;
+        }
+
+        .nav-list {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            list-style: none;
+            color: #101010;
+        }
+
+        .nav-list li {
+            margin: auto 20px;
+            width: 100%;
+        }
+
+        .nav-list li:hover {
+            color: red;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-btns {
+            display: flex;
+            text-decoration: none;
+        }
+    
+       
+        .main {
+            height: 70vh;
+            width: 100vw;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .header-content {
+            display: flex;
+            background: linear-gradient(to right, #bdb1c5, #ddd7d0);
+            height: 80vh;
+            width: 90vw;
+            border-radius: 50px;
+            margin: auto;
+        }
+
+        .left {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .right {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .left form input,
+        .left form textarea,
+        .left form button {
+            margin: 10px 15px;
+            padding: 8px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .left form button {
+            background-color: #101010;
+            color: white;
+            cursor: pointer;
+        }
+        .about-title{
+            font-weight: 500;
+            font-size: medium;
+        }
+
+    </style>
+</head>
+
+<body>
+<nav>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='image1.png') }}" alt="My Image">
+    </div>
+    <ul class="nav-list">
+        <div class="nav-links">
+            <li><a href="{{url_for('html')}}" style="text-decoration:none">Home</a></li>
+            <li><a href="{{url_for('About')}}" style="text-decoration:none">About</a></li>
+            <li><a href="#" style="text-decoration:none">Services</a></li>
+            <li><a href="#" style="text-decoration:none">Contact</a></li>
+        </div>
+
+    </ul>
+</nav>
+<div class="main">
+    <div class="header-content">
+        
+        <div class="left">
+            
+            <form action="/contactform" method="POST">
+                
+                <input type="text" name="username" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="right">
+            <img src="/static/image1.png" alt="My Image">
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

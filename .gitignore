@@ -1,0 +1,21 @@
+# Python bytecode
+__pycache__/
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Compiled Python files
+*.pyc
+
+# Dependency directories
+venv/
+
+.ipynb_checkpoints/
+
+myenv/
+
+project/

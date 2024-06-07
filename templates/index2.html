@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skin Disease Detection</title>
+    <link rel="shortcut icon" href="../static/image1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Sans-serif;
+            background-color: #FAF8F4;
+        }
+
+        header {
+            width: 80%;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo img {
+            width: 120px;
+            height: 70px;
+        }
+
+        .nav-list {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            list-style: none;
+            color: #101010;
+        }
+
+        .nav-btns{
+            display: flex;
+            text-decoration: none;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to right, #BDB1C5, #DDD7D0);
+            min-height: 70vh;
+            max-width: 90vw;
+            border-radius: 50px;
+            margin: auto;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .intro-text {
+            flex-basis: 50%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .btn-primary2 {
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: linear-gradient(to right, #525252, #101010);
+            color: white;
+        }
+
+        .btn-primary2:hover {
+            background-color: white;
+            font-weight: bold;
+        }
+
+        #resultText {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #imageDisplay {
+            max-width: 100%;
+            max-height: 400px;
+            margin-top: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .show-button {
+            display: none;
+            background-color: #4caf50;
+            color: #fff;
+        }
+        
+        #chooseImageInput {
+            display: none;
+        }
+        .li2{
+            margin-left: 10px;
+            padding: 6px 10px 6px 10px;
+            background:linear-gradient(to right, #525252, #101010);
+            border-radius: 5px;
+            color: whitesmoke;
+        }
+        .li2:hover{
+            color: rgba(255, 0, 0, 0.469);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='image1.png') }}" alt="My Image">
+            </div>
+            <ul class="nav-list">
+                <header>
+                    <h1>Skin Disease Detection</h1>
+                </header>
+                <div class="nav-btns">
+                    <li><a href="{{url_for('logout')}}" class="btn-primary" style="text-decoration:none">Log Out</a></li>
+                    <li><a href="{{url_for('home')}}" class="btn-primary li2" style="text-decoration:none">Home</a></li>
+                </div>
+            </ul>
+        </nav>
+        <!-- <div class="header-content">
+            <form class="btn-primary2" action="/success" method="post" enctype="multipart/form-data">
+                <input class="file-form-input" type="file" name="file">
+                <li><a href="{{url_for('upload')}}" class="btn-primary" style="text-decoration:none">Upload</a></li>
+
+            </form>
+            <br>
+           
+            <br>
+        </div> -->
+        <div class="header-content">
+            <form class = "btn-primary2" action="/upload" method="post", enctype="multipart/form-data" >
+                <input class="file-form-input" type="file" , name = "file" required/>
+                <button class="btn-primary2" >Upload</button> 
+            </form>
+        </div>
+        <br>
+    </div>
+
+    <script>
+        document.querySelector('button').
+        document.getElementById('chooseImageInput').addEventListener('change', function (event) {
+            var selectedFile = event.target.files[0];
+
+            if (selectedFile) {
+                displaySelectedImage(selectedFile);
+                updateResultText("Image selected successfully!");
+            }
+            else{
+                updateResultText("please select img");
+            }
+        });
+
+        function displaySelectedImage(file) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var imageDisplay = document.getElementById('imageDisplay');
+                imageDisplay.innerHTML = '';
+                var imgElement = document.createElement('img');
+                imgElement.src = e.target.result;
+                imageDisplay.appendChild(imgElement);
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function updateResultText(text) {
+            var resultText = document.getElementById('resultText');
+            resultText.textContent = text;
+            showButtonIfTextExists();
+        }
+
+        function showButtonIfTextExists() {
+            var textContentElement = document.getElementById('resultText');
+            var showButtonElement = document.getElementById('showButton');
+
+            if (textContentElement.textContent.trim() !== "") {
+                showButtonElement.style.display = 'inline-block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', showButtonIfTextExists);
+    </script>
+</body>
+
+</html>

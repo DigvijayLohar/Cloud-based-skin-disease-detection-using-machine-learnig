@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skin Disease Detection</title>
+    <link rel="shortcut icon" href="../static/image1.png" type="image/x-icon">
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", Sans-serif;
+        background-color: #faf8f4;
+        
+      }
+      nav{
+           display:flex;
+            align-items:center;
+            padding:0px 10px 0px 10px;
+        }
+        .logo img{
+        width:120px;
+        height:70px;
+        }
+       .nav-list{
+        display:flex;
+        width:100%;
+        justify-content:space-between;
+        list-style:none;
+        color:#101010;
+       }
+       .nav-list li{
+        margin:auto 20px;
+        width:100%;
+        
+        
+       }
+       .nav-list li:hover{
+        color:red;
+        font-weight:500;
+        
+       }
+
+       .nav-links{
+        display:flex;
+       }
+       .nav-btns{
+        display:flex;
+        text-decoration:none;
+       }
+      .main{
+        height: 70vh;
+        width: 100vw;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+      }
+      .header-content {
+        display: flex;
+        background: linear-gradient(to right, #bdb1c5, #ddd7d0);
+       height: 80vh;
+       width: 90vw;
+        border-radius: 50px;
+        margin: auto;
+      }
+      .right{
+        width: 50%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border-right: 1px solid gray; */
+      }
+      .right  p{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 5px;
+
+      }
+      .right  label{
+        font-size: 18px; 
+        font-weight: 500;
+        margin-bottom: 30px;
+      }
+      
+      .right input{
+        height: 3rem;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        width: 19rem;
+        margin-top: 5px;
+        margin-bottom: 13px;
+      }
+      .right button{
+        height: 3rem;
+        width: 19rem;
+        color: whitesmoke;
+        font-size: 18px;
+        border-radius: 5px;
+        margin-top: 12px;
+        background-color: #101010;;
+      }
+       .left{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       } 
+
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+          <!-- <img src="C:\Users\LENOVO\Desktop\flask-app\statics\image1.png" alt="image"> -->
+          <img src="{{ url_for('static', filename='image1.png') }}" alt="My Image">
+
+  </div>
+  <ul class="nav-list">
+      <div class="nav-links">
+      <li><a href="{{url_for('html')}}" style="text-decoration:none">Home</a><li>
+      <li><a href="#" style="text-decoration:none">About</a><li>
+      <li><a href="#" style="text-decoration:none">Services</a><li>
+      <li><a href="#" style="text-decoration:none">Contact</a><li>
+      </div>
+      
+  </ul>
+  </nav>
+    <div class="main">
+        <div class="header-content">
+          <form  class="right" action='/login' method='POST'>
+             
+               <div>
+               
+                <p>Log In,</p>
+                <label for="Email" id="lab">Email Address  </label>
+                <br>
+                 <input type="email" name="email" placeholder="abcd@gmail.com" required>
+                 <br>
+                 <label for="" id="lab">Password  </label><br>
+                 <input type="password" name="password" placeholder="password" required>
+                 <br>
+                 {% if error %}
+                 <a id="anch" href="#">{{error}}</a>
+                 {% endif %}
+                 <br>
+                 <button type="submit">login</button>
+             </div>
+            </form>
+             <div class="left">
+                <div class="logo2">
+                    <img src="/static/image1.png" alt="My Image">
+                </div>
+             </div>
+        </div>
+
+    </div>
+  </body>
+</html>
