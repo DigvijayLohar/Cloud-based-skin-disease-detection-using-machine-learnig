@@ -1,5 +1,6 @@
 # Cloud-based-skin-disease-detection-using-machine-learnig
 **Abstract**
+    
     Skin disease is a health problem that affects millions of people worldwide every year. Timely and accurate diagnosis is important for effective treatment and control of these diseases. However, access to dermatologists may be limited in many areas, resulting in delays in diagnosis and possible health risks. To solve this challenge, the combination of cloud computing and machine learning (ML) technology holds great promise. This project aims to revolutionize the diagnosis of skin diseases by using a learning climate model to make diagnosis easier, more accurate and accessible to everyone.
 
 
