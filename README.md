@@ -5,7 +5,7 @@
 
 
 **1.Homepage:**
-<img width="960" alt="Log In" src="https://github.com/DigvijayLohar/Cloud-based-skin-disease-detection-using-machine-learnig/assets/95904669/259bb20b-f3a3-48a8-bae9-164f6f862948">
+<img width="960" alt="Homepage1" src="https://github.com/DigvijayLohar/Cloud-based-skin-disease-detection-using-machine-learnig/assets/95904669/b9437433-97fe-4a83-97df-4528f9dbe6a5">
 
 **Login and Sign Up**: These options provide user authentication. Users can
 either log in if they already have an account or sign up for a new one. This
